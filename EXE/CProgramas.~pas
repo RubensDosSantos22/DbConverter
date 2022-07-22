@@ -1,0 +1,70 @@
+unit CProgramas;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, ToolWin, ActnMan, ActnCtrls, StdCtrls, Buttons;
+
+type
+  TPROGRAMAS = class(TForm)
+    PROGRAMASPARABASES: TGroupBox;
+    SYSPROG: TGroupBox;
+    IrBDE: TBitBtn;
+    IrODBC: TBitBtn;
+    IrDataPump: TBitBtn;
+    IrIBExpert: TBitBtn;
+    IrConfere: TBitBtn;
+    IrPaint: TBitBtn;
+    procedure IrODBCClick(Sender: TObject);
+    procedure IrBDEClick(Sender: TObject);
+    procedure IrDataPumpClick(Sender: TObject);
+    procedure IrConfereClick(Sender: TObject);
+    procedure IrIBExpertClick(Sender: TObject);
+    procedure IrPaintClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  PROGRAMAS: TPROGRAMAS;
+
+implementation
+
+uses CConfere;
+
+{$R *.dfm}
+
+procedure TPROGRAMAS.IrConfereClick(Sender: TObject);
+begin
+  CONFERE:= TCONFERE.Create(Self);
+  CONFERE.Show;
+end;
+procedure TPROGRAMAS.IrODBCClick(Sender: TObject);
+begin
+   WinExec('C:\Windows\syswow64\odbcad32.exe', sw_show);
+end;
+
+procedure TPROGRAMAS.IrBDEClick(Sender: TObject);
+begin
+  WinExec('C:\Program Files (x86)\Common Files\Borland Shared\BDE\BDEADMIN.EXE', sw_show);
+end;
+
+procedure TPROGRAMAS.IrDataPumpClick(Sender: TObject);
+begin
+  WinExec('C:\ConversorDataDump\DataPump\datapump.exe', sw_show);
+end;
+
+procedure TPROGRAMAS.IrIBExpertClick(Sender: TObject);
+begin
+  WinExec('C:\Program Files (x86)\HK-Software\IBExpert\IBExpert.exe', sw_show);
+end;
+
+procedure TPROGRAMAS.IrPaintClick(Sender: TObject);
+begin
+  WinExec('C:\Windows\system32\mspaint.exe', sw_show);
+end;
+
+end.
