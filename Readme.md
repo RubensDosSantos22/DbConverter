@@ -1,10 +1,12 @@
 # Descrição do DbConverter
 
-### Objetivo:
+
+
+## Justificativa:
 
 ​	O objetivo básico do sistema, é reduzir o tempo gasto no processo de conversão de base de dados realizado nos clientes. O mesmo conta com Atalhos, Separadores de arquivos, configuradores e verificadores de dados, todos para garantir o menor tempo necessário para realizar a conversão e agilizar o processo.
 
-### Descrição das funções:
+## Funções Gerais:
 
 - Botões de rápido acesso aos aplicativos: Ibexpert, Datapump, BDE, ODBC e Paint;
 - Botão de atalho para abrir os diretórios padrões usados na conversão;
@@ -14,7 +16,15 @@
 - Configuração do arquivo Sat (que comporta os dados da empresa para emisão do Cupom S@t);
 - Separação dos arquivos da pasta.
 
-### Arquitetura Básica do Sistema:
+## Especificando as Funções:
+
+
+
+## Padrões de arquivo:
+
+
+
+## Padrões de código:
 
 ​	Todas as Units que não fazem parte da seção principal de administração do sistema, possuem em seu início a letra "C". 
 
