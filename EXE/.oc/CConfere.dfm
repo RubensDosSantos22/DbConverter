@@ -1,8 +1,8 @@
 object CONFERE: TCONFERE
-  Left = -15
-  Top = 53
-  Width = 1378
-  Height = 592
+  Left = -8
+  Top = -8
+  Width = 1382
+  Height = 754
   Caption = 'CONFER'#202'NCIA DE DADOS AP'#211'S A CONVERS'#195'O'
   Color = clWindowFrame
   Font.Charset = DEFAULT_CHARSET

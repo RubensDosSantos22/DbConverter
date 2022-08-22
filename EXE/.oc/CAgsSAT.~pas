@@ -266,12 +266,12 @@ procedure TAGSSAT.EdtCaminhoIniSatChange(Sender: TObject);
 var
   Arquivo: string;
 begin
-  if Trava = False then
+  {if Trava = False then
     begin
       Arquivo:= Copy(EdtCaminhoIniSat.Text, 2, length(EdtCaminhoIniSat.Text)-2);
       Trava:= True;
       EdtCaminhoIniSat.Text:= Arquivo;
-    end;
+    end;}
 end;
 
 end.

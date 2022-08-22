@@ -1,15 +1,16 @@
-object AGSSAT: TAGSSAT
-  Left = 24
-  Top = 220
-  Width = 1300
-  Height = 480
+object AGSINI: TAGSINI
+  Left = -8
+  Top = -8
+  Width = 1382
+  Height = 744
   BorderIcons = [biSystemMenu]
-  Caption = 'AGSSAT'
+  Caption = 'INI'
   Color = clWhite
+  Ctl3D = False
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clBlack
   Font.Height = -11
-  Font.Name = 'MS Sans Serif'
+  Font.Name = 'Verdana'
   Font.Style = []
   Icon.Data = {
     0000010001008080000001002000280801001600000028000000800000000001
@@ -2136,14 +2137,12 @@ object AGSSAT: TAGSSAT
     Width = 673
     Height = 689
     Color = clWhite
-    Ctl3D = False
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clBlack
     Font.Height = -11
     Font.Name = 'Verdana'
     Font.Style = []
     ParentColor = False
-    ParentCtl3D = False
     ParentFont = False
     TabOrder = 0
     object lbl1: TLabel
@@ -2155,27 +2154,34 @@ object AGSSAT: TAGSSAT
     end
     object lbl2: TLabel
       Left = 8
-      Top = 112
+      Top = 111
       Width = 102
       Height = 13
       Caption = 'DADOS OBTIDOS'
     end
     object MMDATA: TMemo
       Left = 8
-      Top = 128
+      Top = 126
       Width = 657
-      Height = 553
+      Height = 554
       Enabled = False
       Lines.Strings = (
         '')
+      ReadOnly = True
       TabOrder = 0
     end
     object IR: TBitBtn
       Left = 584
-      Top = 46
+      Top = 47
       Width = 81
       Height = 25
       Caption = 'IR'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBtnText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
       OnClick = IRClick
       Glyph.Data = {
@@ -2208,10 +2214,16 @@ object AGSSAT: TAGSSAT
     end
     object btn1: TBitBtn
       Left = 8
-      Top = 72
-      Width = 121
-      Height = 25
+      Top = 76
+      Width = 126
+      Height = 29
       Caption = 'CONFIGURAR'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBtnText
+      Font.Height = -11
+      Font.Name = 'Verdana'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 2
       OnClick = btn1Click
       Glyph.Data = {
@@ -2242,12 +2254,12 @@ object AGSSAT: TAGSSAT
         6D3B4CD7636ABCFFFFFFFFFFFFF2F2F2EFEFEFF0EFEFF0EFEFE7E6E53C332F2B
         241FCECBCAF1F0EFF0EFEFF0EFEFE2E3E64857D3757ABEFFFFFF}
     end
-    object EdtCaminhoIniSat: TFilenameEdit
-      Left = 9
-      Top = 48
+    object PESQUISAARQ: TFilenameEdit
+      Left = 8
+      Top = 49
       Width = 569
       Height = 20
-      OnButtonClick = EdtCaminhoIniSatButtonClick
+      OnButtonClick = PESQUISAARQButtonClick
       Filter = 'INI Files|*.ini'
       ClickKey = 16463
       GlyphKind = gkCustom
@@ -2281,850 +2293,765 @@ object AGSSAT: TAGSSAT
       ButtonWidth = 25
       NumGlyphs = 1
       TabOrder = 3
-      OnChange = EdtCaminhoIniSatChange
+      OnChange = PESQUISAARQChange
     end
   end
   object RESULTS: TGroupBox
     Left = 688
     Top = 8
     Width = 673
-    Height = 129
-    Caption = 'FORTES'
+    Height = 81
+    Caption = 'CERTIFICADO'
     Color = clWhite
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
+    DockSite = True
     ParentColor = False
-    ParentCtl3D = False
-    ParentFont = False
     TabOrder = 1
     object Label1: TLabel
       Left = 8
       Top = 24
-      Width = 33
+      Width = 56
       Height = 13
-      Caption = 'LOGO'
+      Caption = 'CAMINHO'
     end
     object Label2: TLabel
-      Left = 12
-      Top = 75
-      Width = 81
-      Height = 13
-      Caption = 'USAR FORTES'
-    end
-    object Label3: TLabel
-      Left = 104
-      Top = 75
-      Width = 55
-      Height = 13
-      Caption = 'LARGURA'
-    end
-    object Lbl24: TLabel
-      Left = 174
-      Top = 75
-      Width = 61
-      Height = 13
-      Caption = 'MARGEM T'
-    end
-    object Lbl25: TLabel
-      Left = 248
-      Top = 75
-      Width = 60
-      Height = 13
-      Caption = 'MARGEM F'
-    end
-    object Lbl26: TLabel
-      Left = 319
-      Top = 75
-      Width = 61
-      Height = 13
-      Caption = 'MARGEM E'
-    end
-    object Lbl27: TLabel
-      Left = 391
-      Top = 75
-      Width = 63
-      Height = 13
-      Caption = 'MARGEM D'
-    end
-    object Lbl28: TLabel
-      Left = 467
-      Top = 75
-      Width = 53
-      Height = 13
-      Caption = 'PREVIEW'
-    end
-    object LOGO: TEdit
-      Left = 8
-      Top = 40
-      Width = 657
-      Height = 19
-      Enabled = False
-      TabOrder = 0
-    end
-    object USARFORTES: TEdit
-      Left = 12
-      Top = 91
-      Width = 83
-      Height = 19
-      Enabled = False
-      TabOrder = 1
-    end
-    object LARGURA: TEdit
-      Left = 104
-      Top = 91
-      Width = 61
-      Height = 19
-      Enabled = False
-      TabOrder = 2
-    end
-    object MARGEMTOPO: TEdit
-      Left = 174
-      Top = 91
-      Width = 65
-      Height = 19
-      Enabled = False
-      TabOrder = 3
-    end
-    object MARGEMFUNDO: TEdit
-      Left = 248
-      Top = 91
-      Width = 62
-      Height = 19
-      Enabled = False
-      TabOrder = 4
-    end
-    object MARGEMESQUERDA: TEdit
-      Left = 319
-      Top = 91
-      Width = 63
-      Height = 19
-      Enabled = False
-      TabOrder = 5
-    end
-    object MARGEMDIREITA: TEdit
-      Left = 391
-      Top = 91
-      Width = 66
-      Height = 19
-      Enabled = False
-      TabOrder = 6
-    end
-    object PREVIEW: TEdit
-      Left = 467
-      Top = 91
-      Width = 55
-      Height = 19
-      Enabled = False
-      TabOrder = 7
-    end
-  end
-  object GERAL: TGroupBox
-    Left = 688
-    Top = 142
-    Width = 673
-    Height = 123
-    Caption = 'SAT'
-    Color = clWhite
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
-    ParentColor = False
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 2
-    object Lbl: TLabel
-      Left = 8
-      Top = 18
-      Width = 49
-      Height = 13
-      Caption = 'MODELO'
-    end
-    object lblFormaEmissao: TLabel
-      Left = 69
-      Top = 18
-      Width = 83
-      Height = 13
-      Caption = 'ARQUIVO LOG'
-    end
-    object lblSALVAR: TLabel
-      Left = 163
-      Top = 18
-      Width = 58
-      Height = 13
-      Caption = 'NOME DLL'
-    end
-    object lblLOGOMARCA: TLabel
-      Left = 8
-      Top = 75
-      Width = 92
-      Height = 13
-      Caption = 'COD ATIVA'#199#195'O'
-    end
-    object lblPATHSALVAR: TLabel
-      Left = 112
-      Top = 75
-      Width = 45
-      Height = 13
-      Caption = 'COD UF'
-    end
-    object Lbl29: TLabel
-      Left = 168
-      Top = 75
-      Width = 67
-      Height = 13
-      Caption = 'NUM CAIXA'
-    end
-    object Lbl30: TLabel
-      Left = 248
-      Top = 75
-      Width = 59
-      Height = 13
-      Caption = 'AMBIENTE'
-    end
-    object Lbl31: TLabel
-      Left = 320
-      Top = 75
-      Width = 78
-      Height = 13
-      Caption = 'P'#193'G CODIGO'
-    end
-    object Lbl32: TLabel
-      Left = 408
-      Top = 75
-      Width = 78
-      Height = 13
-      Caption = 'VERS DADOS'
-    end
-    object Lbl33: TLabel
-      Left = 496
-      Top = 75
-      Width = 88
-      Height = 13
-      Caption = 'FORMATAR XML'
-    end
-    object MODELO: TEdit
-      Left = 8
-      Top = 34
-      Width = 52
-      Height = 19
-      Enabled = False
-      TabOrder = 0
-    end
-    object ARQLOG: TEdit
-      Left = 68
-      Top = 34
-      Width = 88
-      Height = 19
-      Enabled = False
-      TabOrder = 1
-    end
-    object NOMEDLL: TEdit
-      Left = 163
-      Top = 34
-      Width = 502
-      Height = 19
-      Enabled = False
-      TabOrder = 2
-    end
-    object CODIGOATIVACAO: TEdit
-      Left = 8
-      Top = 91
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 3
-    end
-    object CODIGOUF: TEdit
-      Left = 112
-      Top = 91
-      Width = 49
-      Height = 19
-      Enabled = False
-      TabOrder = 4
-    end
-    object NUMEROCAIXA: TEdit
-      Left = 168
-      Top = 91
-      Width = 73
-      Height = 19
-      Enabled = False
-      TabOrder = 5
-    end
-    object AMBIENTE: TEdit
-      Left = 248
-      Top = 91
-      Width = 66
-      Height = 19
-      Enabled = False
-      TabOrder = 6
-    end
-    object PAGINADECODIGO: TEdit
-      Left = 320
-      Top = 91
-      Width = 84
-      Height = 19
-      Enabled = False
-      TabOrder = 7
-    end
-    object VERSAODADOS: TEdit
-      Left = 410
-      Top = 91
-      Width = 81
-      Height = 19
-      Enabled = False
-      TabOrder = 8
-    end
-    object FORMATARXML: TEdit
-      Left = 496
-      Top = 91
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 9
-    end
-  end
-  object EXTRATO: TGroupBox
-    Left = 688
-    Top = 270
-    Width = 305
-    Height = 65
-    Caption = 'EXTRATO'
-    Color = clWhite
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
-    ParentColor = False
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 3
-    object Label4: TLabel
-      Left = 8
-      Top = 19
-      Width = 38
-      Height = 13
-      Caption = 'PORTA'
-    end
-    object Label6: TLabel
-      Left = 56
-      Top = 19
-      Width = 76
-      Height = 13
-      Caption = 'PAR. STRING'
-    end
-    object PORTA: TEdit
-      Left = 8
-      Top = 35
-      Width = 43
-      Height = 19
-      Enabled = False
-      TabOrder = 0
-    end
-    object PARSTRING: TEdit
-      Left = 56
-      Top = 35
-      Width = 241
-      Height = 19
-      Enabled = False
-      TabOrder = 1
-    end
-  end
-  object REDE: TGroupBox
-    Left = 688
-    Top = 529
-    Width = 673
-    Height = 168
-    Caption = 'REDE'
-    Color = clWhite
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
-    ParentColor = False
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 4
-    object Label12: TLabel
-      Left = 8
-      Top = 25
-      Width = 53
-      Height = 13
-      Caption = 'TP INTER'
-    end
-    object lbl9: TLabel
-      Left = 72
-      Top = 25
-      Width = 40
-      Height = 13
-      Caption = 'TP LAN'
-    end
-    object lbl10: TLabel
-      Left = 8
-      Top = 74
-      Width = 30
-      Height = 13
-      Caption = 'SSID'
-    end
-    object lbl11: TLabel
-      Left = 111
-      Top = 74
-      Width = 24
-      Height = 13
-      Caption = 'SEG'
-    end
-    object lbl12: TLabel
-      Left = 146
-      Top = 74
-      Width = 50
-      Height = 13
-      Caption = 'CODIGO'
-    end
-    object lbl13: TLabel
-      Left = 120
-      Top = 25
-      Width = 38
-      Height = 13
-      Caption = 'LAN IP'
-    end
-    object lbl14: TLabel
-      Left = 223
-      Top = 25
-      Width = 59
-      Height = 13
-      Caption = 'LAN MASK'
-    end
-    object lbl15: TLabel
-      Left = 328
-      Top = 25
-      Width = 46
-      Height = 13
-      Caption = 'LAN GW'
-    end
-    object lbl16: TLabel
-      Left = 432
-      Top = 25
-      Width = 58
-      Height = 13
-      Caption = 'LAN DNS1'
-    end
-    object lbl17: TLabel
-      Left = 540
-      Top = 25
-      Width = 58
-      Height = 13
-      Caption = 'LAN DNS2'
-    end
-    object lbl18: TLabel
-      Left = 253
-      Top = 74
-      Width = 54
-      Height = 13
-      Caption = 'USUARIO'
-    end
-    object lbl19: TLabel
-      Left = 360
-      Top = 74
+      Left = 176
+      Top = 24
       Width = 39
       Height = 13
       Caption = 'SENHA'
     end
-    object lbl20: TLabel
+    object Label3: TLabel
+      Left = 288
+      Top = 24
+      Width = 108
+      Height = 13
+      Caption = 'N'#218'MERO DE S'#201'RIE'
+    end
+    object CAMINHO: TEdit
       Left = 8
-      Top = 123
-      Width = 39
-      Height = 13
-      Caption = 'PROXY'
-    end
-    object lbl21: TLabel
-      Left = 112
-      Top = 123
-      Width = 55
-      Height = 13
-      Caption = 'PROXY IP'
-    end
-    object lbl22: TLabel
-      Left = 216
-      Top = 123
-      Width = 81
-      Height = 13
-      Caption = 'PROXY PORTA'
-    end
-    object lbl23: TLabel
-      Left = 320
-      Top = 123
-      Width = 74
-      Height = 13
-      Caption = 'PROXY USER'
-    end
-    object Lbl3: TLabel
-      Left = 425
-      Top = 122
-      Width = 82
-      Height = 13
-      Caption = 'PROXY SENHA'
-    end
-    object TIPOINTER: TEdit
-      Left = 8
-      Top = 41
-      Width = 59
+      Top = 40
+      Width = 161
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 0
     end
-    object TIPOLAN: TEdit
-      Left = 72
-      Top = 41
-      Width = 42
+    object SENHA: TEdit
+      Left = 176
+      Top = 40
+      Width = 105
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 1
     end
-    object SSID: TEdit
-      Left = 8
-      Top = 90
-      Width = 97
+    object NUMSERIE: TEdit
+      Left = 288
+      Top = 40
+      Width = 201
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 2
     end
-    object SEG: TEdit
-      Left = 111
-      Top = 90
-      Width = 29
-      Height = 19
-      Enabled = False
-      TabOrder = 3
-    end
-    object CODIGO: TEdit
-      Left = 146
-      Top = 90
-      Width = 100
-      Height = 19
-      Enabled = False
-      TabOrder = 4
-    end
-    object LANIP: TEdit
-      Left = 120
-      Top = 41
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 5
-    end
-    object LANMASK: TEdit
-      Left = 223
-      Top = 41
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 6
-    end
-    object LANGW: TEdit
-      Left = 328
-      Top = 41
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 7
-    end
-    object LANDNS1: TEdit
-      Left = 432
-      Top = 41
-      Width = 100
-      Height = 19
-      Enabled = False
-      TabOrder = 8
-    end
-    object LANDNS2: TEdit
-      Left = 540
-      Top = 41
-      Width = 100
-      Height = 19
-      Enabled = False
-      TabOrder = 9
-    end
-    object USUARIO: TEdit
-      Left = 253
-      Top = 90
-      Width = 100
-      Height = 19
-      Enabled = False
-      TabOrder = 10
-    end
-    object SENHA: TEdit
-      Left = 360
-      Top = 90
-      Width = 100
-      Height = 19
-      Enabled = False
-      TabOrder = 11
-    end
-    object PROXY: TEdit
-      Left = 8
-      Top = 139
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 12
-    end
-    object PROXYIP: TEdit
-      Left = 112
-      Top = 139
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 13
-    end
-    object PROXYPORTA: TEdit
-      Left = 216
-      Top = 139
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 14
-    end
-    object PROXYUSER: TEdit
-      Left = 320
-      Top = 139
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 15
-    end
-    object PROXYSENHA: TEdit
-      Left = 425
-      Top = 138
-      Width = 97
-      Height = 19
-      Enabled = False
-      TabOrder = 16
-    end
   end
-  object SWH: TGroupBox
+  object GERAL: TGroupBox
     Left = 688
-    Top = 419
+    Top = 96
     Width = 673
-    Height = 106
-    Caption = 'SWH'
+    Height = 129
+    Caption = 'GERAL'
     Color = clWhite
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
     ParentColor = False
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 5
-    object Label11: TLabel
+    TabOrder = 2
+    object lblDANFE: TLabel
       Left = 8
-      Top = 28
-      Width = 29
+      Top = 24
+      Width = 38
       Height = 13
-      Caption = 'CNPJ'
+      Caption = 'DANFE'
     end
-    object lbl8: TLabel
-      Left = 7
-      Top = 81
-      Width = 29
+    object lblFormaEmissao: TLabel
+      Left = 56
+      Top = 24
+      Width = 98
       Height = 13
-      Caption = 'ASS:'
+      Caption = 'FORMA EMISS'#195'O'
     end
-    object SCNPJ: TEdit
+    object lblSALVAR: TLabel
+      Left = 280
+      Top = 24
+      Width = 45
+      Height = 13
+      Caption = 'SALVAR'
+    end
+    object lblLOGOMARCA: TLabel
       Left = 8
-      Top = 44
-      Width = 153
+      Top = 80
+      Width = 75
+      Height = 13
+      Caption = 'LOGOMARCA'
+    end
+    object lblPATHSALVAR: TLabel
+      Left = 304
+      Top = 80
+      Width = 78
+      Height = 13
+      Caption = 'PATH SALVAR'
+    end
+    object DANFE: TEdit
+      Left = 8
+      Top = 40
+      Width = 41
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 0
     end
-    object ASSINATURA: TEdit
-      Left = 40
-      Top = 77
-      Width = 625
+    object FORMEMISS: TEdit
+      Left = 56
+      Top = 40
+      Width = 217
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 1
     end
-  end
-  object EMIT: TGroupBox
-    Left = 688
-    Top = 340
-    Width = 673
-    Height = 74
-    Caption = 'EMIT'
-    Color = clWhite
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
-    ParentColor = False
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 6
-    object Label7: TLabel
+    object SALVAR: TEdit
+      Left = 280
+      Top = 40
+      Width = 57
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 2
+    end
+    object LOGOMARCA: TEdit
       Left = 8
-      Top = 28
+      Top = 96
+      Width = 289
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 3
+    end
+    object PATHSALVA: TEdit
+      Left = 304
+      Top = 96
+      Width = 361
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 4
+    end
+  end
+  object WEBSERVICE: TGroupBox
+    Left = 688
+    Top = 232
+    Width = 177
+    Height = 73
+    Caption = 'WEB SERVICE'
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 3
+    object Label4: TLabel
+      Left = 8
+      Top = 24
+      Width = 14
+      Height = 13
+      Caption = 'UF'
+    end
+    object Label5: TLabel
+      Left = 72
+      Top = 24
+      Width = 29
+      Height = 13
+      Caption = 'AMB.'
+    end
+    object Label6: TLabel
+      Left = 128
+      Top = 24
+      Width = 25
+      Height = 13
+      Caption = 'VIS.'
+    end
+    object UF1: TEdit
+      Left = 8
+      Top = 40
+      Width = 57
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 0
+    end
+    object AMBIENTE: TEdit
+      Left = 72
+      Top = 40
+      Width = 49
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 1
+    end
+    object VISUALIZAR: TEdit
+      Left = 128
+      Top = 40
+      Width = 41
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 2
+    end
+  end
+  object EMITENTE: TGroupBox
+    Left = 688
+    Top = 416
+    Width = 673
+    Height = 281
+    Caption = 'EMITENTE'
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 4
+    object Label12: TLabel
+      Left = 8
+      Top = 24
+      Width = 90
+      Height = 13
+      Caption = 'RAZ'#195'O SOCIAL'
+    end
+    object lbl9: TLabel
+      Left = 376
+      Top = 24
+      Width = 56
+      Height = 13
+      Caption = 'FANTASIA'
+    end
+    object lbl10: TLabel
+      Left = 8
+      Top = 72
       Width = 29
       Height = 13
       Caption = 'CNPJ'
     end
-    object Label8: TLabel
-      Left = 144
-      Top = 28
+    object lbl11: TLabel
+      Left = 176
+      Top = 72
       Width = 12
       Height = 13
       Caption = 'IE'
     end
-    object Label9: TLabel
-      Left = 313
-      Top = 28
-      Width = 40
-      Height = 13
-      Caption = 'R TRIB'
-    end
-    object Label10: TLabel
-      Left = 363
-      Top = 28
-      Width = 50
-      Height = 13
-      Caption = 'R ISSQN'
-    end
-    object Lbl35: TLabel
-      Left = 425
-      Top = 28
-      Width = 55
-      Height = 13
-      Caption = 'IR ISSQN'
-    end
-    object Lbl36: TLabel
-      Left = 489
-      Top = 28
-      Width = 65
-      Height = 13
-      Caption = 'SALVAR EM'
-    end
-    object Label5: TLabel
-      Left = 232
-      Top = 28
+    object lbl12: TLabel
+      Left = 344
+      Top = 72
       Width = 14
       Height = 13
       Caption = 'IM'
     end
-    object CNPJ: TEdit
+    object lbl13: TLabel
+      Left = 512
+      Top = 72
+      Width = 32
+      Height = 13
+      Caption = 'CNAE'
+    end
+    object lbl14: TLabel
       Left = 8
-      Top = 44
-      Width = 129
+      Top = 120
+      Width = 30
+      Height = 13
+      Caption = 'FONE'
+    end
+    object lbl15: TLabel
+      Left = 168
+      Top = 120
+      Width = 23
+      Height = 13
+      Caption = 'CEP'
+    end
+    object lbl16: TLabel
+      Left = 328
+      Top = 120
+      Width = 83
+      Height = 13
+      Caption = 'LOGRADOURO'
+    end
+    object lbl17: TLabel
+      Left = 8
+      Top = 168
+      Width = 49
+      Height = 13
+      Caption = 'N'#218'MERO'
+    end
+    object lbl18: TLabel
+      Left = 72
+      Top = 168
+      Width = 87
+      Height = 13
+      Caption = 'COMPLEMENTO'
+    end
+    object lbl19: TLabel
+      Left = 176
+      Top = 168
+      Width = 46
+      Height = 13
+      Caption = 'BAIRRO'
+    end
+    object lbl20: TLabel
+      Left = 304
+      Top = 168
+      Width = 74
+      Height = 13
+      Caption = 'CODCIDADE'
+    end
+    object lbl21: TLabel
+      Left = 400
+      Top = 168
+      Width = 14
+      Height = 13
+      Caption = 'UF'
+    end
+    object lbl22: TLabel
+      Left = 480
+      Top = 168
+      Width = 47
+      Height = 13
+      Caption = 'CIDADE'
+    end
+    object lbl23: TLabel
+      Left = 8
+      Top = 216
+      Width = 27
+      Height = 13
+      Caption = 'SITE'
+    end
+    object RAZSOCIAL: TEdit
+      Left = 8
+      Top = 40
+      Width = 361
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 0
     end
-    object IE: TEdit
-      Left = 144
-      Top = 44
-      Width = 81
+    object FANTASIA: TEdit
+      Left = 376
+      Top = 40
+      Width = 289
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 1
     end
-    object REGTRIBUTARIO: TEdit
-      Left = 313
-      Top = 44
-      Width = 43
+    object CNPJ: TEdit
+      Left = 8
+      Top = 88
+      Width = 153
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 2
     end
-    object REGIMETRIBUTARIOISSQN: TEdit
-      Left = 363
-      Top = 44
-      Width = 53
+    object IE: TEdit
+      Left = 176
+      Top = 88
+      Width = 153
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 3
     end
-    object INDRATLISSQN: TEdit
-      Left = 425
-      Top = 44
-      Width = 58
+    object IM: TEdit
+      Left = 344
+      Top = 88
+      Width = 153
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 4
     end
-    object SALVAREM: TEdit
-      Left = 489
-      Top = 44
-      Width = 176
+    object CNAE: TEdit
+      Left = 512
+      Top = 88
+      Width = 153
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 5
     end
-    object IM: TEdit
-      Left = 232
-      Top = 44
-      Width = 75
+    object FONE: TEdit
+      Left = 8
+      Top = 136
+      Width = 153
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 6
+    end
+    object CEP: TEdit
+      Left = 168
+      Top = 136
+      Width = 153
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 7
+    end
+    object LOGRADOURO: TEdit
+      Left = 328
+      Top = 136
+      Width = 337
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 8
+    end
+    object NUMERO: TEdit
+      Left = 8
+      Top = 184
+      Width = 57
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 9
+    end
+    object COMPLEMENTO: TEdit
+      Left = 72
+      Top = 184
+      Width = 97
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 10
+    end
+    object BAIRRO: TEdit
+      Left = 176
+      Top = 184
+      Width = 121
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 11
+    end
+    object CODCIDADE: TEdit
+      Left = 304
+      Top = 184
+      Width = 89
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 12
+    end
+    object UF: TEdit
+      Left = 400
+      Top = 184
+      Width = 73
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 13
+    end
+    object CIDADE: TEdit
+      Left = 480
+      Top = 184
+      Width = 185
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 14
+    end
+    object SITE: TEdit
+      Left = 8
+      Top = 232
+      Width = 657
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 15
+    end
+  end
+  object EMAIL: TGroupBox
+    Left = 688
+    Top = 305
+    Width = 673
+    Height = 104
+    Caption = 'E-MAIL'
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 5
+    object Label11: TLabel
+      Left = 8
+      Top = 24
+      Width = 32
+      Height = 13
+      Caption = 'HOST'
+    end
+    object lbl3: TLabel
+      Left = 512
+      Top = 24
+      Width = 38
+      Height = 13
+      Caption = 'PORTA'
+    end
+    object lbl4: TLabel
+      Left = 168
+      Top = 24
+      Width = 31
+      Height = 13
+      Caption = 'USER'
+    end
+    object lbl5: TLabel
+      Left = 432
+      Top = 24
+      Width = 31
+      Height = 13
+      Caption = 'PASS'
+    end
+    object lbl6: TLabel
+      Left = 328
+      Top = 24
+      Width = 56
+      Height = 13
+      Caption = 'ASSUNTO'
+    end
+    object lbl7: TLabel
+      Left = 568
+      Top = 24
+      Width = 22
+      Height = 13
+      Caption = 'SSL'
+    end
+    object lbl8: TLabel
+      Left = 8
+      Top = 80
+      Width = 74
+      Height = 13
+      Caption = 'MENSAGEM: '
+    end
+    object HOST1: TEdit
+      Left = 8
+      Top = 40
+      Width = 153
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 0
+    end
+    object SSL: TEdit
+      Left = 568
+      Top = 40
+      Width = 33
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 1
+    end
+    object MENSAGEM: TEdit
+      Left = 80
+      Top = 72
+      Width = 585
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 2
+    end
+    object PASSWORD: TEdit
+      Left = 432
+      Top = 40
+      Width = 73
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 3
+    end
+    object USER1: TEdit
+      Left = 168
+      Top = 40
+      Width = 153
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 4
+    end
+    object ASSUNTO: TEdit
+      Left = 328
+      Top = 40
+      Width = 97
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 5
+    end
+    object PORTA1: TEdit
+      Left = 512
+      Top = 40
+      Width = 41
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 6
     end
   end
-  object PRINTER: TGroupBox
-    Left = 997
-    Top = 271
-    Width = 364
-    Height = 64
-    Caption = 'PRINTER'
-    Ctl3D = False
-    Font.Charset = DEFAULT_CHARSET
-    Font.Color = clBlack
-    Font.Height = -11
-    Font.Name = 'Verdana'
-    Font.Style = []
-    ParentCtl3D = False
-    ParentFont = False
-    TabOrder = 7
-    object Lbl34: TLabel
+  object PROXY: TGroupBox
+    Left = 872
+    Top = 232
+    Width = 489
+    Height = 73
+    Caption = 'PROXY'
+    Color = clWhite
+    ParentColor = False
+    TabOrder = 6
+    object Label7: TLabel
       Left = 8
-      Top = 18
+      Top = 24
       Width = 32
       Height = 13
-      Caption = 'NAME'
+      Caption = 'HOST'
     end
-    object NAME: TEdit
+    object Label8: TLabel
+      Left = 184
+      Top = 24
+      Width = 38
+      Height = 13
+      Caption = 'PORTA'
+    end
+    object Label9: TLabel
+      Left = 232
+      Top = 24
+      Width = 31
+      Height = 13
+      Caption = 'USER'
+    end
+    object Label10: TLabel
+      Left = 408
+      Top = 24
+      Width = 31
+      Height = 13
+      Caption = 'PASS'
+    end
+    object HOST: TEdit
       Left = 8
-      Top = 34
-      Width = 348
+      Top = 40
+      Width = 169
       Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
       Enabled = False
       TabOrder = 0
     end
+    object PORTA: TEdit
+      Left = 184
+      Top = 40
+      Width = 41
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 1
+    end
+    object USER: TEdit
+      Left = 232
+      Top = 40
+      Width = 169
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 2
+    end
+    object PASS: TEdit
+      Left = 408
+      Top = 40
+      Width = 73
+      Height = 19
+      BevelInner = bvNone
+      BevelKind = bkTile
+      BevelOuter = bvSpace
+      Enabled = False
+      TabOrder = 3
+    end
   end
-  object DbSAT: TDatabase
+  object BaseINI: TDatabase
     AliasName = 'AGSF'
-    Connected = True
-    DatabaseName = 'BaseSat'
+    DatabaseName = 'BASEINI'
     LoginPrompt = False
     SessionName = 'Default'
-    Left = 648
-    Top = 19
+    Left = 649
+    Top = 17
   end
-  object QrSAT: TQuery
-    DatabaseName = 'BaseSat'
-    Left = 616
-    Top = 19
+  object QrINI: TQuery
+    DatabaseName = 'AGSF'
+    Left = 618
+    Top = 17
   end
 end

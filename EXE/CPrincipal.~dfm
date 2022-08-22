@@ -2638,7 +2638,7 @@ object INDEX: TINDEX
       Top = 240
       Width = 169
       Height = 33
-      Caption = ' AGSINNER'
+      Caption = ' INNER'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -2680,7 +2680,7 @@ object INDEX: TINDEX
       Top = 280
       Width = 169
       Height = 33
-      Caption = 'AGSSATTER'
+      Caption = 'ASATTER'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11

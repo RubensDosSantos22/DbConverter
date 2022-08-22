@@ -2,7 +2,7 @@ program CListaje;
 
 uses
   Forms,
-  CPrincipal in 'CPrincipal.pas' {INDEX},
+  CPrincipal in '.oc\CPrincipal.pas' {INDEX};
 
 {$R *.res}
 

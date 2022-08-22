@@ -395,10 +395,10 @@ begin
   QrContaClienteDBF.SQL.Text:= 'select count(*) as QtdClientes from cli000';
   QrContaClienteDBF.Open;
 
-  LblQuantidadeProdutosFDB.Caption:= 'QUANTIDADE DE PRODUTOS EM FIREBIRD: ' + QrContaProdFDBQTDPRODUTOS.Value;
-  LblQuantidadeProdutosDBF.Caption:= 'QUANTIDADE DE PRODUTOS EM DBF: ' + QrContaProdDBFQtdProdutos.Value;
-  LblQuantidadeClientesFDB.Caption:= 'QUANTIDADE DE CLIENTES EM FIREBIRD: ' + QrContaClienteFDBQTDCLIENTES.Value;
-  LblQuantidadeClientesDBF.Caption:= 'QUANTIDADE DE CLIENTES EM DBF: ' + QrContaClienteDBFQtdClientes.Value;
+  LblQuantidadeProdutosFDB.Caption:= 'QUANTIDADE DE PRODUTOS EM FIREBIRD: ' + IntToStr(QrContaProdFDBQTDPRODUTOS.Value);
+  LblQuantidadeProdutosDBF.Caption:= 'QUANTIDADE DE PRODUTOS EM DBF: ' + IntToStr(QrContaProdDBFQtdProdutos.Value);
+  LblQuantidadeClientesFDB.Caption:= 'QUANTIDADE DE CLIENTES EM FIREBIRD: ' + IntToStr(QrContaClienteFDBQTDCLIENTES.Value);
+  LblQuantidadeClientesDBF.Caption:= 'QUANTIDADE DE CLIENTES EM DBF: ' + IntToStr(QrContaClienteDBFQtdClientes.Value);
 
 
 
