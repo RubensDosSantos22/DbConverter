@@ -2414,9 +2414,9 @@ object INDEX: TINDEX
     object LabelAGS_ORIGEM: TLabel
       Left = 464
       Top = 10
-      Width = 77
+      Width = 49
       Height = 13
-      Caption = ' AGS_ ORIGEM'
+      Caption = '_ORIGEM'
     end
     object Label1: TLabel
       Left = 526
@@ -2435,9 +2435,9 @@ object INDEX: TINDEX
     object LabelAGSORIGEM: TLabel
       Left = 464
       Top = 50
-      Width = 68
+      Width = 43
       Height = 13
-      Caption = 'AGS ORIGEM'
+      Caption = 'ORIGEM'
     end
     object CaminhoAGS_ORIGEM: TEdit
       Left = 464
@@ -2638,7 +2638,7 @@ object INDEX: TINDEX
       Top = 240
       Width = 169
       Height = 33
-      Caption = ' AGSINNER'
+      Caption = 'INNER'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
@@ -2680,7 +2680,7 @@ object INDEX: TINDEX
       Top = 280
       Width = 169
       Height = 33
-      Caption = 'AGSSATTER'
+      Caption = 'SATTER'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -11
