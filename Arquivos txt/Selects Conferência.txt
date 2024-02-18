@@ -1,0 +1,9 @@
+elect sum(valor_rec) as totalbb from drec00 where venct_rec >= :Datai and venct_Rec <= :Dataf
+Select sum(valor_pag) as totalbb from dpag00 where venct_pag >= :Datai and venct_pag <= :Dataf
+Select sum(ttnf_ped) as totalbb from ped200 where data_ped >= :Datai and data_ped <= :Dataf
+Select sum(valo_ccl) as totalbb from carteira where venc_ccl >= :Datai and venc_ccl <= :Dataf
+Select sum(qtdd_pp) as totalbv from ped2pro,ped200 where chav_pp = nume_ped and data_ped >= :Datai and data_ped <= :Dataf
+Select sum(qtdd_pp) as totalBV from pedpro,ent000 where chav_pp = chav_ent and data_ent >= :Datai and data_ent <= :Dataf
+Select sum(NPBQTD) as total from ENTCER where NPBDAT >= :Datai and NPBDAT <= :Dataf
+elect SUM(QTDADE) AS TOTAL  from ipentra,PENTRADA where IPENTRA.numero = pentrada.NUMERO AND  DATA >= :Datai and DATA <= :Dataf
+Select SUM(QTDADE) AS TOTAL  from ipSAIDAS,PSAIDAS  where PSAIDAS.NUMERO = IPSAIDAS.numero  AND  DATA >= :Datai and DATA <= :Dataf
